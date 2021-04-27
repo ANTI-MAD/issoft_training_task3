@@ -20,9 +20,11 @@ public class Main {
         coupler.next.next = new Coupler(passengerCar);
         coupler.next.next.next = new Coupler(freightCar2);
 
-        while (coupler != null) {
-            System.out.println(coupler.getTrainCar().getInfo());
-            coupler = coupler.next;
+        Train train = new Train(number - 1000, coupler);
+        Coupler head = train.getCoupler();
+        while (head != null) {
+            System.out.println(head.getTrainCar().getInfo());
+            head = head.next;
         }
     }
 }
