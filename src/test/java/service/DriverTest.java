@@ -10,9 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-class DriverServiceTest {
-    private final DriverService driverService = new DriverService();
-
+class DriverTest {
     @Test
     void hasLicence() {
         LocalDate localDate = LocalDate.of(1992, 4, 20);
@@ -20,7 +18,7 @@ class DriverServiceTest {
                 localDate,
                 LicenceStatus.HAS);
 
-        boolean bool = driverService.hasLicence(driver);
+        boolean bool = driver.hasLicence();
 
         assertThat(Boolean.TRUE, is(equalTo(bool)));
     }
@@ -30,7 +28,7 @@ class DriverServiceTest {
         LocalDate localDate = LocalDate.of(1992, 4, 20);
         Driver driver = new Driver("firstName", "lastName", localDate);
 
-        boolean bool = driverService.hasLicence(driver);
+        boolean bool = driver.hasLicence();
 
         assertThat(Boolean.FALSE, is(equalTo(bool)));
     }

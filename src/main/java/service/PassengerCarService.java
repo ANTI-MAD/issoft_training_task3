@@ -6,11 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PassengerCarService {
-    private final PassengerService passengerService = new PassengerService();
 
     public String boardingPassenger(Passenger passenger, PassengerCar passengerCar) {
         log.debug("Method boardingPassenger(Passenger passenger, PassengerCar passengerCar) called");
-        if (passengerService.hasTicket(passenger)) {
+        if (passenger.hasTicket()) {
             log.debug("The passenger has a ticket.");
             if (passengerCar.getListOfFreeSeats().contains(passenger.getTicketNumber())) {
                 log.debug("The passenger has a valid ticket.");

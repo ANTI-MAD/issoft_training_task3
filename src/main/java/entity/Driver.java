@@ -22,4 +22,8 @@ public class Driver extends User {
     public void setLicenceStatus(LicenceStatus licenceStatus) {
         this.licenceStatus = licenceStatus;
     }
+
+    public boolean hasLicence() {
+        return licenceStatus.equals(LicenceStatus.HAS);
+    }
 }
