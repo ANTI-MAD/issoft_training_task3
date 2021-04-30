@@ -25,9 +25,9 @@ class PassengerCarServiceTest {
 
         PassengerCar passengerCar = new PassengerCar(numberPassengerCar, "model");
 
-        final String info = passengerCarService.boardingPassenger(passenger, passengerCar);
+        final boolean info = passengerCarService.boardingPassenger(passenger, passengerCar);
 
-        assertThat("The passenger Vasya Pupkin successfully boarded the train", is(equalTo(info)));
+        assertThat(Boolean.TRUE, is(equalTo(info)));
     }
 
     @Test
@@ -39,9 +39,9 @@ class PassengerCarServiceTest {
 
         PassengerCar passengerCar = new PassengerCar(numberPassengerCar, "model");
 
-        final String info = passengerCarService.boardingPassenger(passenger, passengerCar);
+        final boolean info = passengerCarService.boardingPassenger(passenger, passengerCar);
 
-        assertThat("The passenger Vasya Pupkin does not have a ticket", is(equalTo(info)));
+        assertThat(Boolean.FALSE, is(equalTo(info)));
     }
 
     @Test
@@ -56,8 +56,8 @@ class PassengerCarServiceTest {
 
         PassengerCar passengerCar = new PassengerCar(numberPassengerCar, "model");
 
-        final String info = passengerCarService.boardingPassenger(passenger, passengerCar);
+        final boolean info = passengerCarService.boardingPassenger(passenger, passengerCar);
 
-        assertThat("The passenger Vasya Pupkin has the wrong ticket number", is(equalTo(info)));
+        assertThat(Boolean.FALSE, is(equalTo(info)));
     }
 }
